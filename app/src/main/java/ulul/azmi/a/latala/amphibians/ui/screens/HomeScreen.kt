@@ -1,53 +1,37 @@
-/*
- * Copyright (C) 2023 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+package ulul.azmi.a.latala.amphibians.ui.screens // Paket untuk antarmuka pengguna
 
-package ulul.azmi.a.latala.amphibians.ui.screens
-
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
-import ulul.azmi.a.latala.amphibians.R
-import ulul.azmi.a.latala.amphibians.model.Amphibian
-import ulul.azmi.a.latala.amphibians.ui.theme.AmphibiansTheme
+import androidx.compose.foundation.Image // Komponen untuk menampilkan gambar
+import androidx.compose.foundation.layout.Arrangement // Layout untuk mengatur susunan elemen
+import androidx.compose.foundation.layout.Column // Layout kolom
+import androidx.compose.foundation.layout.PaddingValues // Padding untuk elemen
+import androidx.compose.foundation.layout.fillMaxSize // Mengisi maksimum ukuran
+import androidx.compose.foundation.layout.fillMaxWidth // Mengisi lebar penuh
+import androidx.compose.foundation.layout.padding // Menambahkan padding
+import androidx.compose.foundation.layout.size // Mengatur ukuran komponen
+import androidx.compose.foundation.lazy.LazyColumn // Kolom yang dapat di-scroll
+import androidx.compose.foundation.lazy.items // Untuk menampilkan item dalam lazy column
+import androidx.foundation.shape.RoundedCornerShape // Bentuk sudut bulat pada card
+import androidx.material3.Button // Tombol untuk tindakan ulang
+import androidx.material3.Card // Komponen card
+import androidx.material3.MaterialTheme // Tema material desain
+import androidx.material3.Text // Komponen teks
+import androidx.compose.runtime.Composable // Fungsi composable
+import androidx.compose.ui.Alignment // Posisi komponen di dalam layout
+import androidx.compose.ui.Modifier // Modifikasi komponen UI
+import androidx.compose.ui.layout.ContentScale // Skala konten gambar
+import androidx.compose.ui.platform.LocalContext // Context aplikasi
+import androidx.compose.ui.res.dimensionResource // Mendapatkan ukuran resource dimensi
+import androidx.compose.ui.res.painterResource // Untuk mendapatkan gambar dari resource
+import androidx.compose.ui.res.stringResource // Untuk mengambil string dari resource
+import androidx.compose.ui.text.font.FontWeight // Bobot font untuk teks
+import androidx.compose.ui.text.style.TextAlign // Aligment teks
+import androidx.compose.ui.tooling.preview.Preview // Fungsi preview untuk komponen composable
+import androidx.compose.ui.unit.dp // Unit ukuran dalam desimal untuk padding
+import coil.compose.AsyncImage // Komponen untuk memuat gambar asinkron dari URL
+import coil.request.ImageRequest // Request image dari URL
+import ulul.azmi.a.latala.amphibians.R // Resource ID dari resource aplikasi
+import ulul.azmi.a.latala.amphibians.model.Amphibian // Model data untuk amfibi
+import ulul.azmi.a.latala.amphibians.ui.theme.AmphibiansTheme // Tema aplikasi
 
 @Composable
 fun HomeScreen(
@@ -74,7 +58,7 @@ fun HomeScreen(
 }
 
 /**
- * The home screen displaying the loading message.
+ * Layar beranda menampilkan pesan loading.
  */
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
@@ -86,7 +70,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
 }
 
 /**
- * The home screen displaying error message with re-attempt button.
+ * Layar beranda menampilkan pesan error dengan tombol re-attempt.
  */
 @Composable
 fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
