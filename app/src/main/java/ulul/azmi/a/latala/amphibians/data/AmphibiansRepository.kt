@@ -4,19 +4,25 @@ import ulul.azmi.a.latala.amphibians.model.Amphibian
 import ulul.azmi.a.latala.amphibians.network.AmphibiansApiService
 
 /**
- * Repository retrieves amphibian data from underlying data source.
+ * Repository digunakan untuk mengambil data amphibian dari sumber data utama.
  */
 interface AmphibiansRepository {
-    /** Retrieves list of amphibians from underlying data source */
+    /** 
+     * Fungsi untuk mengambil daftar amphibian dari sumber data.
+     * suspend: Fungsi ini berjalan secara asynchronous untuk mendukung coroutine.
+     */
     suspend fun getAmphibians(): List<Amphibian>
 }
 
 /**
- * Network Implementation of repository that retrieves amphibian data from underlying data source.
+ * Implementasi Network untuk Repository, yang mengambil data amphibian dari API.
  */
 class DefaultAmphibiansRepository(
-    private val amphibiansApiService: AmphibiansApiService
+    private val amphibiansApiService: AmphibiansApiService // Dependency Injection: API Service
 ) : AmphibiansRepository {
-    /** Retrieves list of amphibians from underlying data source */
+    /** 
+     * Mengambil daftar amphibian dari API menggunakan amphibiansApiService.
+     * override: Mengimplementasikan fungsi dari interface AmphibiansRepository.
+     */
     override suspend fun getAmphibians(): List<Amphibian> = amphibiansApiService.getAmphibians()
 }
