@@ -35,8 +35,11 @@ fun AmphibiansApp() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
+            // Mengambil ViewModel dari AmphibiansViewModel
             val amphibiansViewModel: AmphibiansViewModel =
                 viewModel(factory = AmphibiansViewModel.Factory)
+
+            // Menyediakan HomeScreen dengan state UI dari ViewModel
             HomeScreen(
                 amphibiansUiState = amphibiansViewModel.amphibiansUiState,
                 retryAction = amphibiansViewModel::getAmphibians,
